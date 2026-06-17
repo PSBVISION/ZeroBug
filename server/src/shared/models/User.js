@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         minlength: 3,
         validate: {
             validator: function (userName) {
-                return /^[a-zA-Z0-9_.-]+$/.test(userName);
+                return /^[a-zA-Z0-9_.-]+$/.test(userName); //regex for alphanumeric, underscore, hyphen, and dot
             },
             message: "Please enter a valid username"
         }
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
         trim: true,
         validate: {
             validator: function (email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Simple regex for email validation
             },
             message: "Please enter a valid email"
         }
